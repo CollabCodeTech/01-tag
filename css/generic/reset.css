@@ -14,3 +14,7 @@ input {
   font-family: inherit;
   color: inherit;
 }
+
+input:focus {
+  outline: none;
+}
