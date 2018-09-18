@@ -1,7 +1,11 @@
+.form-collab {
+  width: 80vw;
+}
+
 .form-collab .title {
   display: block;
-  font-size: 30px;
   text-align: center;
+  margin-bottom: 6px;
 }
 
 .form-collab .subtitle {
@@ -10,4 +14,12 @@
   text-align: center;
   color: var(--color-first);
   font-weight: bold;
+}
+
+.form-collab .input {
+  display: block;
+  width: 100%;
+  border-bottom: 2px solid var(--color-second);
+  background-color: transparent;
+  height: 2em;
 }

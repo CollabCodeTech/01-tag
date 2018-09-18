@@ -3,3 +3,8 @@
   padding: 0;
   border: none;
 }
+
+input {
+  font-size: inherit;
+  font-family: inherit;
+}
