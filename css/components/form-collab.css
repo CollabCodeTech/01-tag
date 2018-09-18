@@ -5,7 +5,7 @@
 .form-collab .title {
   display: block;
   text-align: center;
-  margin-bottom: 6px;
+  margin-bottom: var(--spacing-small);
 }
 
 .form-collab .subtitle {
@@ -14,6 +14,7 @@
   text-align: center;
   color: var(--color-first);
   font-weight: bold;
+  margin-bottom: var(--spacing-medium);
 }
 
 .form-collab .input {
@@ -22,4 +23,13 @@
   border-bottom: 2px solid var(--color-second);
   background-color: transparent;
   height: 2em;
+  font-weight: bold;
+}
+.form-collab .input::selection {
+  background-color: var(--color-first);
+  color: var(--color-zero);
+}
+.form-collab .input:focus,
+.form-collab .input:hover {
+  border-bottom-color: var(--color-first);
 }
