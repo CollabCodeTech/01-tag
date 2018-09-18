@@ -1,0 +1,5 @@
+body {
+  font-family: "Comfortaa", cursive;
+  background-color: var(--color-third);
+  color: var(--color-second);
+}
