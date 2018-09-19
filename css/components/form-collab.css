@@ -5,11 +5,12 @@
 .form-collab .label {
   display: block;
   position: relative;
+  margin-bottom: var(--spacing-big);
 }
 .form-collab .label:not(:last-of-type) {
   margin-bottom: var(--spacing-medium);
 }
-.form-collab .label:after {
+.form-collab .label::after {
   content: "";
   display: block;
   width: 100%;
@@ -59,4 +60,28 @@
 .form-collab .input:focus,
 .form-collab .input:hover {
   border-bottom-color: var(--color-first);
+}
+
+.form-collab .tagInput {
+  display: none;
+}
+
+.form-collab .tag {
+  font-size: 18px;
+  background-color: var(--color-second-light);
+  padding: 8px;
+  cursor: pointer;
+}
+
+.form-collab .tag::selection {
+  background-color: transparent;
+}
+
+.form-collab .tagInput:checked + .tag {
+  background-color: var(--color-first);
+  color: var(--color-zero);
+}
+
+input[type="radio"]:checked + label {
+  font-size: 40px;
 }
