@@ -18,13 +18,14 @@
   bottom: 1px;
   left: 0;
   background-color: var(--color-first);
-  transform-origin: left center;
+  transform-origin: center;
   transform: scaleX(0);
 
   transition: transform 200ms linear;
 }
 
-.form-collab .label:focus-within:after {
+/* .form-collab .label:focus-within:after, */
+.form-collab .label.-focus::after {
   transform: scaleX(1);
 }
 
