@@ -62,6 +62,17 @@
   border-bottom-color: var(--color-first);
 }
 
+.form-collab .wrapTag {
+  position: relative;
+  margin-right: 10px;
+
+  transition: opacity 200ms linear;
+}
+
+.form-collab .wrapTag.-remove {
+  opacity: 0;
+}
+
 .form-collab .tagInput {
   display: none;
 }
@@ -83,6 +94,29 @@
   background-color: var(--color-first);
   color: var(--color-zero);
   animation: vibrationChecked 300ms linear;
+}
+.form-collab .remove {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  line-height: 22px;
+  text-align: center;
+  background: var(--color-second);
+  color: var(--color-zero);
+  transform: translateY(-50%);
+  font-size: 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 100ms linear;
+}
+.form-collab .remove:hover,
+.form-collab .remove:focus {
+  transform: translateY(-50%) scale(1.2);
+}
+.form-collab .remove::selection {
+  background-color: transparent;
 }
 
 @keyframes vibrationChecked {

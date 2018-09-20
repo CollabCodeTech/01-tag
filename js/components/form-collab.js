@@ -16,6 +16,16 @@ const $input = $formCollab.querySelector(".input");
 const $tags = $formCollab.querySelector(".tags");
 
 const focusAndBlur = () => $label.classList.toggle("-focus");
+const newTag = value => {
+  const $tag = document.createElement("span");
+  const template = `
+      <input class="tagInput" id="${value}" type="checkbox" checked>
+      <label class="tag" for="${value}">${value}</label>
+    `;
+  $tag.innerHTML = template;
+
+  return $tag;
+};
 
 $formCollab.addEventListener("submit", event => event.preventDefault());
 
@@ -29,16 +39,23 @@ $input.addEventListener("keyup", event => {
   const keys = {
     13: "ENTER"
   };
-  const template =
-    '<input class="tagInput" id="frontend" type="checkbox"><label class="tag" for="frontend">FrontEnd</label>';
 
   if (keys[keyCode] === "ENTER") {
     const { value } = $input;
-    const template = `
-      <input class="tagInput" id="${value}" type="checkbox" checked>
-      <label class="tag" for="${value}">${value}</label>
-    `;
 
-    $tags.innerHTML = template + $tags.innerHTML;
+    $tags.prepend(newTag(value));
+
+    $input.value = "";
+  }
+});
+
+$tags.addEventListener("click", event => {
+  const { target } = event;
+
+  if (target.classList.contains("remove")) {
+    const $wrapTag = target.closest(".wrapTag");
+
+    $wrapTag.classList.add("-remove");
+    $wrapTag.addEventListener("transitionend", () => $wrapTag.remove());
   }
 });
